@@ -76,6 +76,13 @@ body {
   color: #77992a;
 }
 
+.badge-wrapper {
+  width: 4in;
+  height: 3in;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 5px;
+}
 .badge-wrapper.v1 .badge-body {
   font-size: 14px;
 }
@@ -120,9 +127,9 @@ body {
 }
 .badge-body {
   position: relative;
-  width: 4in;
-  min-height: 3in;
-  height: 3in;
+  width: 3.9in;
+  min-height: 2.92in;
+  height: 2.92in;
   margin: 0 auto;
   overflow: hidden;
   border: 1px solid #9b9b9b;
@@ -139,7 +146,7 @@ body {
   max-height: 70px;
 }
 .badge-content {
-  padding: 16px 15px;
+  padding: 10px 15px;
 }
 .badge-title {
   font-family: "Oswald", sans-serif;
