@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Badge</title>
+
+    <!-- FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            padding: 0;
+            box-sizing: border-box;
+            line-height: 1.2;
+            font-size: 18px;
+            font-family: 'Roboto', sans-serif;
+            font-weight: 600;
+            -webkit-print-color-adjust: exact !important;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .text-uppercase {
+            text-transform: uppercase;
+        }
+
+        .badge-body {
+            position: relative;
+            margin: 0 auto;
+            overflow: hidden;
+            display: block;
+            min-height: 0;
+            text-align: center;
+            border:0;
+        }
+        .badge-content{
+            padding:0;
+        }
+        .badge-title {
+            text-transform: uppercase;
+            margin-bottom: 0;
+            padding-bottom: 10px;
+            font-size: 26px;
+            line-height: 1;
+            font-weight: 900;
+            letter-spacing: 1px;
+        }
+        .badge-wrapper .badge-logo img {
+            max-height: 95px;
+        }
+
+        .badge-logo {
+            padding: 0;
+        }
+        .badge-logo img{
+            padding-top:15px;
+        }
+
+        .badge-foot {
+            font-size: 18px;
+        }
+        .badge-foot p{
+            padding-bottom:15px;
+        }
+
+
+        @page {
+            size: auto;
+            padding-top:0;
+            margin: 0mm 0mm 0mm 0mm;
+        }
+        @media screen{
+            .badge-wrapper{
+                padding:0;
+                margin:0;
+            }
+        }
+        @media print{
+            .badge-wrapper{
+                page-break-after: always;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="badge-wrapper">
+    <div class="badge-body">
+        <!-- BADGE LOGO -->
+        <div class="badge-logo badge-logo-js">
+            <img src="assets/images/logo_isna_black.png" alt="ISNA" class="badge-logo-image badge-logo-image-js">
+        </div>
+
+        <div class="badge-content">
+
+            <!-- BADGE TITLE -->
+            <h2 class="badge-title badge-title-js">
+                <span class="badge-title-text badge-title-text-js">Abunaser Faisal</span>
+            </h2>
+
+            <!-- BADGE ID -->
+            <div class="badge-info">
+                <p class="badge-id badge-id-js">ID: 1554485254526</p>
+            </div>
+        </div>
+
+        <!-- BADGE FOOTER -->
+        <div class="badge-foot">
+            <p class="text-uppercase badge-event-name badge-event-name-js">59th Annual ISNA Convention 2022</p>
+        </div>
+    </div>
+</div>
+
+<div class="badge-wrapper">
+    <div class="badge-body">
+        <!-- BADGE LOGO -->
+        <div class="badge-logo badge-logo-js">
+            <img src="assets/images/logo_isna_black.png" alt="ISNA" class="badge-logo-image badge-logo-image-js">
+        </div>
+
+        <div class="badge-content">
+
+            <!-- BADGE TITLE -->
+            <h2 class="badge-title badge-title-js">
+                <span class="badge-title-text badge-title-text-js">Abunaser Faisal</span>
+            </h2>
+
+            <!-- BADGE ID -->
+            <div class="badge-info">
+                <p class="badge-id badge-id-js">ID: 1554485254526</p>
+            </div>
+        </div>
+
+        <!-- BADGE FOOTER -->
+        <div class="badge-foot">
+            <p class="text-uppercase badge-event-name badge-event-name-js">59th Annual ISNA Convention 2022</p>
+        </div>
+    </div>
+</div>
+
+<div class="badge-wrapper">
+    <div class="badge-body">
+        <!-- BADGE LOGO -->
+        <div class="badge-logo badge-logo-js">
+            <img src="assets/images/logo_isna_black.png" alt="ISNA" class="badge-logo-image badge-logo-image-js">
+        </div>
+
+        <div class="badge-content">
+
+            <!-- BADGE TITLE -->
+            <h2 class="badge-title badge-title-js">
+                <span class="badge-title-text badge-title-text-js">Abunaser Faisal</span>
+            </h2>
+
+            <!-- BADGE ID -->
+            <div class="badge-info">
+                <p class="badge-id badge-id-js">ID: 1554485254526</p>
+            </div>
+        </div>
+
+        <!-- BADGE FOOTER -->
+        <div class="badge-foot">
+            <p class="text-uppercase badge-event-name badge-event-name-js">59th Annual ISNA Convention 2022</p>
+        </div>
+    </div>
+</div>
+
+
+<script src="https://code.jquery.com/jquery-3.6.1.slim.min.js" integrity="sha256-w8CvhFs7iHNVUtnSP0YKEg00p9Ih13rlL9zGqvLdePA=" crossorigin="anonymous"></script>
+<script>
+    //== 3in(76mm);
+    let height = 75,
+        heightLogoDiv = $('.badge-logo').height()*0.264583333,
+        heightFootDiv = $('.badge-foot').height()*0.264583333,
+        heightContentDiv = height - (heightLogoDiv + heightFootDiv),
+        heightContentDivUnit = `${heightContentDiv}mm`,
+        badgeContentOriginalHeight = $('.badge-content').height()*0.264583333,
+        paddingTopToContent = (heightContentDiv - badgeContentOriginalHeight)/2;
+
+    $('.badge-body').each(function (i, elementObject) {
+        $(elementObject).css('height', height+'mm');
+        $(elementObject).find('.badge-content').css('height', heightContentDivUnit);
+        $(elementObject).find('.badge-content').children(":first").css('padding-top', paddingTopToContent+'mm');
+    });
+
+
+</script>
+
+</body>
+</html>

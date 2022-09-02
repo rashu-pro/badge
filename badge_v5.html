@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Badge</title>
+    <link rel="stylesheet" href="assets/css/style.css?v=1.0.0">
+</head>
+<body>
+
+<div class="badge-wrapper v5">
+    <div class="badge-body">
+        <div class="badge-logo bg-red">
+            <img src="assets/images/logo_isna_black.png" alt="ISNA">
+        </div>
+
+        <div class="badge-content">
+            <h2 class="badge-title attendee-name-js">
+                <span class="text-wrapper text-wrapper-js">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci dolore illum reiciendis</span>
+            </h2>
+            <div class="badge-info">
+                <p>ID: 1554485254526</p>
+            </div>
+        </div>
+
+        <div class="badge-foot">
+            <p class="text-uppercase">59th Annual ISNA Convention 2022</p>
+        </div>
+    </div>
+</div>
+
+<!--<div class="badge-wrapper v5 style-2 mb-35">-->
+    <!--<div class="badge-body">-->
+        <!--<div class="badge-logo bg-red">-->
+            <!--<img src="assets/images/logo_isna_black.png" alt="ISNA">-->
+        <!--</div>-->
+
+        <!--<div class="badge-content">-->
+            <!--<h2 class="badge-title">Mr. Raihan</h2>-->
+            <!--<div class="badge-info">-->
+                <!--<p>ID: 1554485254526</p>-->
+            <!--</div>-->
+        <!--</div>-->
+
+        <!--<div class="badge-foot">-->
+            <!--<p class="text-uppercase">59th Annual ISNA Convention 2022</p>-->
+        <!--</div>-->
+    <!--</div>-->
+<!--</div>-->
+
+<!--<div class="badge-wrapper v5 style-3 mb-35">-->
+    <!--<div class="badge-body">-->
+        <!--<div class="badge-logo bg-red">-->
+            <!--<img src="assets/images/logo_isna_black.png" alt="ISNA">-->
+        <!--</div>-->
+
+        <!--<div class="badge-content">-->
+            <!--<h2 class="badge-title">Mr. Raihan</h2>-->
+            <!--<div class="badge-info">-->
+                <!--<p>ID: 1554485254526</p>-->
+            <!--</div>-->
+        <!--</div>-->
+
+        <!--<div class="badge-foot">-->
+            <!--<p class="text-uppercase">59th Annual ISNA Convention 2022</p>-->
+        <!--</div>-->
+    <!--</div>-->
+<!--</div>-->
+
+<!-- JQUERY SLIM -->
+<script src="https://code.jquery.com/jquery-3.6.1.slim.min.js" integrity="sha256-w8CvhFs7iHNVUtnSP0YKEg00p9Ih13rlL9zGqvLdePA=" crossorigin="anonymous"></script>
+<script>
+    let badgeBodyWidth = $('.badge-body').width(),
+        attendeeNameWidth = $('.attendee-name-js .text-wrapper-js').width(),
+        consoleString = `Badge body width: ${badgeBodyWidth} \n Attendee name width: ${attendeeNameWidth}`;
+    console.log(consoleString);
+
+
+
+</script>
+
+</body>
+</html>
