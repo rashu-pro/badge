@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Badge</title>
+
+    <!-- FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+
+
+    <style>
+        body {
+            padding: 0;
+            box-sizing: border-box;
+            line-height: 1.2;
+            font-size: 18px;
+            font-family: 'Roboto', sans-serif;
+            font-weight: 600;
+            -webkit-print-color-adjust: exact !important;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .text-uppercase {
+            text-transform: uppercase;
+        }
+
+        .badge-body {
+            position: relative;
+            margin: 0 auto;
+            overflow: hidden;
+            width:100mm;
+            display: block;
+            min-height: 0;
+            text-align: center;
+            border:0;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .badge-content{
+            padding:0 15px;
+        }
+        .badge-title {
+            text-transform: uppercase;
+            margin-bottom: 0;
+            /*padding-bottom: 40px;*/
+            font-size: 30px;
+            line-height: 1;
+            font-weight: 900;
+            letter-spacing: 1px;
+            position: relative;
+        }
+        .badge-title-text{
+            bottom:5px;
+        }
+        .text-resize-js{
+            position: relative;
+        }
+        .text-resize-text-js{
+            white-space: nowrap;
+            text-align: center;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .badge-wrapper .badge-logo img {
+            max-height: 95px;
+        }
+
+        .badge-logo {
+            padding: 0;
+        }
+        .badge-logo img{
+            padding-top:10px;
+        }
+
+        .badge-foot {
+            font-size: 18px;
+            /*padding-bottom:10px;*/
+        }
+        .badge-foot p{
+            /*padding-bottom:15px;*/
+        }
+
+
+        @page {
+            size: auto;
+            padding-top:0;
+            margin: 0mm 0mm 0mm 0mm;
+        }
+        @media screen{
+            .badge-wrapper{
+                padding:0;
+                margin:0;
+            }
+        }
+        @media print{
+            .badge-wrapper{
+                page-break-after: always;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="badge-wrapper">
+    <div class="badge-body">
+        <!-- BADGE LOGO -->
+        <div class="badge-logo badge-logo-js">
+            <img src="https://secure-api.net/resources/isna/344172_60x60.png" class="badge-logo-image badge-logo-image-js">
+        </div>
+
+        <div class="badge-content">
+
+            <!-- BADGE TITLE -->
+            <h2 class="badge-title badge-title-js text-resize-js">
+                <span class="badge-title-text badge-title-text-js text-resize-text-js">RAHMAT ALI</span>
+            </h2>
+
+            <!-- BADGE ID -->
+            <div class="badge-info">
+                <p class="badge-id badge-id-js text-resize-js">
+                    <span class="text-resize-text-js"> ID: C48074-001 </span>
+                </p>
+            </div>
+        </div>
+
+        <!-- BADGE FOOTER -->
+        <div class="badge-foot">
+            <p class="text-uppercase badge-event-name badge-event-name-js text-resize-js">
+                <span class="text-resize-text-js">59th annual ISNA convention 2022</span>
+            </p>
+        </div>
+    </div>
+</div>
+
+<div class="badge-wrapper">
+    <div class="badge-body">
+        <!-- BADGE LOGO -->
+        <div class="badge-logo badge-logo-js">
+            <img src="https://secure-api.net/resources/isna/344172_60x60.png" class="badge-logo-image badge-logo-image-js">
+        </div>
+
+        <div class="badge-content">
+
+            <!-- BADGE TITLE -->
+            <h2 class="badge-title badge-title-js text-resize-js">
+                <span class="badge-title-text badge-title-text-js text-resize-text-js">AYDIN ALI</span>
+            </h2>
+
+            <!-- BADGE ID -->
+            <div class="badge-info">
+                <p class="badge-id badge-id-js text-resize-js">
+                    <span class="text-resize-text-js"> ID: C48074-002 </span>
+                </p>
+            </div>
+        </div>
+
+        <!-- BADGE FOOTER -->
+        <div class="badge-foot">
+            <p class="text-uppercase badge-event-name badge-event-name-js text-resize-js">
+                <span class="text-resize-text-js">59th annual ISNA convention 2022</span>
+            </p>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.1.slim.min.js" integrity="sha256-w8CvhFs7iHNVUtnSP0YKEg00p9Ih13rlL9zGqvLdePA=" crossorigin="anonymous"></script>
+<script>
+    let boxDivWidth = $('.badge-body').width();
+    $('.text-resize-js').each(function (i, elementObject) {
+        //=== ADJUST FONT SIZE ACCORDING TO VIEWPORT WIDTH
+        let element = $(elementObject),
+            textWidth = element.find('.text-resize-text-js').width(),
+            fontSize = parseInt(element.css('font-size'));
+
+        element.height(element.find('.text-resize-text-js').height() + 10);
+
+        while ((boxDivWidth - 20) < textWidth) {
+            fontSize = fontSize - 1;
+            element.css('font-size', fontSize);
+            element.height(element.find('.text-resize-text-js').height() + 10);
+            textWidth = element.find('.text-resize-text-js').width();
+        }
+    });
+
+    //== 3in(76mm); 296/4 = 74
+    let height = 75,
+        heightLogoDiv = $('.badge-logo').height() * 0.264583333,
+        heightFootDiv = $('.badge-foot').height() * 0.264583333,
+        heightContentDiv = height - (heightLogoDiv + heightFootDiv),
+        heightContentDivUnit = `${heightContentDiv}mm`,
+        badgeContentOriginalHeight = $('.badge-content').height() * 0.264583333,
+        paddingTopToContent = (heightContentDiv - badgeContentOriginalHeight) / 2;
+
+    $('.badge-body').each(function (i, elementObject) {
+        $(elementObject).css('height', height + 'mm');
+    });
+
+</script>
+</body>
+</html>
+
+
+<style type="text/css" media="print">
+    @page {
+        size: auto;
+        margin: 0mm;
+    }
+
+    /*body {
+        margin: 1.6cm;
+        print-color-adjust: exact;
+    }*/
+</style>
+<!-- jQuery 2.2.3 -->
+<script src="/Content/AdminTheme/jquery/jquery-2.2.3.min.js"></script>
+<!-- Bootstrap 3.3.6 -->
+
+
+<script>
+    $(document).ready(function () {
+        setTimeout(function () { window.print(); }, 500);
+        window.onfocus = function () { setTimeout(function () { window.close(); }, 300); }
+    });
+</script>
