@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Badge</title>
+    <title>Badge | ISNA</title>
 
     <!-- FONTS -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -12,7 +12,7 @@
 
     <style>
         @page {
-            size: 102mm 76mm;
+            size: auto;
             padding-top:0;
             margin: 0mm 0mm 0mm 0mm;
         }
@@ -186,9 +186,8 @@
 
         /* ----------- */
         .badge-body{
-            height: 76mm;
             padding:0;
-            display: flex;
+            display: block;
             min-height: 0;
         }
         .badge-content{
@@ -248,6 +247,54 @@
     </div>
 </div>
 
+<div class="badge-wrapper v5 style-3">
+    <div class="badge-body">
+        <div class="badge-logo bg-red">
+            <img src="assets/images/logo_isna_black.png" alt="ISNA">
+        </div>
+
+        <div class="badge-content">
+            <h2 class="badge-title attendee-name-js">Abunaser Faisal</h2>
+            <div class="badge-info">
+                <p>ID: 1554485254526</p>
+            </div>
+        </div>
+
+        <div class="badge-foot">
+            <p class="text-uppercase">59th Annual ISNA Convention 2022</p>
+        </div>
+    </div>
+</div>
+
+
+<script src="https://code.jquery.com/jquery-3.6.1.slim.min.js" integrity="sha256-w8CvhFs7iHNVUtnSP0YKEg00p9Ih13rlL9zGqvLdePA=" crossorigin="anonymous"></script>
+<script>
+    //== 3in(76); 5in(127)
+    let height = 76,
+        heightLogoDiv = $('.badge-logo').height()*0.264583333,
+        heightFootDiv = $('.badge-foot').height()*0.264583333,
+        heightContentDiv = height - (heightLogoDiv + heightFootDiv),
+        paddingTopContent = (height - (heightLogoDiv+heightContentDiv+heightFootDiv))/2,
+        heightLogoDivUnit = `${heightLogoDiv}mm`,
+        heightContentDivUnit = `${heightContentDiv}mm`,
+        heightFootDivUnit = `${heightFootDiv}mm`,
+        paddingTopContentUnit = `${paddingTopContent}mm`,
+        badgeContentOriginalHeight = $('.badge-content').height()*0.264583333,
+        paddingTopToContent = (heightContentDiv - badgeContentOriginalHeight)/2;
+
+    $('.badge-body').each(function (i, elementObject) {
+        $(elementObject).css('height', height+'mm');
+        $(elementObject).find('.badge-content').css('height', heightContentDivUnit);
+        $(elementObject).find('.badge-content').children(":first").css('padding-top', paddingTopToContent+'mm');
+    });
+
+    //$('.badge-body').css('height', height+'mm');
+    //$('.badge-logo').css('height', heightLogoDivUnit);
+    //$('.badge-content').css('height', heightContentDivUnit);
+    //$('.badge-foot').css('height', heightFootDivUnit);
+    //$('.badge-content').children(":first").css('padding-top', paddingTopToContent+'mm');
+
+</script>
 
 </body>
 </html>

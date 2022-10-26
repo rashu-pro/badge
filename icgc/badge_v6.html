@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Badge</title>
+    <title>Badge | ICGC</title>
 
     <!-- FONTS -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -34,7 +34,7 @@
             position: relative;
             margin: 0 auto;
             overflow: hidden;
-            width:100mm;
+            width:101mm;
             display: block;
             min-height: 0;
             text-align: center;
@@ -78,7 +78,7 @@
             padding: 0;
         }
         .badge-logo img{
-            padding-top:10px;
+            padding-top:5px;
         }
 
         .badge-foot {
@@ -176,6 +176,23 @@
             background-position: top;
         }
 
+        .badge-wrapper-row{
+            box-sizing: border-box;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap:wrap;
+        }
+        .badge-wrapper-row .badge-wrapper{
+            /*margin-bottom:2mm;*/
+            /*flex:0 0 50%;*/
+            /*max-width:50%;*/
+            flex:0 0 50%;
+            max-width:50%;
+        }
+        .badge-wrapper-row .badge-wrapper:nth-child(odd){
+
+        }
+
 
         /*==================
         PRINT RULES
@@ -183,6 +200,9 @@
         @page {
             size: auto;
             padding-top:0;
+            /*THIS MARGIN IS USED FOR MULTIPLE BADGE PRINTING IN SINGLE PAGE*/
+            /*margin: 25.1mm 6.35mm 25.1mm 6.35mm;*/
+            /*THIS MARGIN IS USED FOR SINGLE PAGE*/
             margin: 0mm 0mm 0mm 0mm;
         }
         @media screen{
@@ -203,49 +223,122 @@
             }
         }
     </style>
+
 </head>
+
 
 <body>
 
-<div style="margin:120px;">
-    <div class="badge-wrapper v6 on-test">
-        <div class="badge-body bg-image" style="background-image: url(assets/images/bg.png)">
-            <!-- BADGE LOGO -->
-            <div class="badge-logo badge-logo-js">
-                <img src="assets/images/logos/logo_icgc_transparent_.png" alt="ISNA" class="badge-logo-image badge-logo-image-js">
+<div class="badge-wrapper v6">
+    <div class="badge-body bg-image" style="background-image: url(../assets/images/bg.png)">
+        <!-- BADGE LOGO -->
+        <div class="badge-logo badge-logo-js">
+            <img src="../assets/images/logos/logo_icgc_transparent_.png" alt="ICGC" class="badge-logo-image badge-logo-image-js">
+        </div>
+
+        <div class="badge-content">
+
+            <!-- BADGE TITLE -->
+            <h2 class="badge-title badge-title-js text-resize-js">
+                <span class="badge-title-text badge-title-text-js text-resize-text-js">Abunaser Faisal</span>
+            </h2>
+
+            <!-- BADGE ID -->
+            <div class="badge-info">
+                <p class="badge-id badge-id-js text-resize-js">
+                    <span class="text-resize-text-js"> ID: 1554485254526 </span>
+                </p>
+            </div>
+        </div>
+
+        <!-- BADGE FOOTER -->
+        <div class="badge-foot d-flex justify-space-between align-end">
+            <div>
+                <h2 class="section-title">ICGC YOUTH CONFERENCE 2022</h2>
+                <p class="text-left event-date text-small">October 28-30, 2022</p>
             </div>
 
-            <div class="badge-content">
-
-                <!-- BADGE TITLE -->
-                <h2 class="badge-title badge-title-js text-resize-js">
-                    <span class="badge-title-text badge-title-text-js text-resize-text-js">Abunaser Faisal</span>
-                </h2>
-
-                <!-- BADGE ID -->
-                <div class="badge-info">
-                    <p class="badge-id badge-id-js text-resize-js">
-                        <!--<span class="text-resize-text-js"> ID: 1554485254526 </span>-->
-                    </p>
-                </div>
-            </div>
-
-            <!-- BADGE FOOTER -->
-            <div class="badge-foot d-flex justify-space-between align-end">
-                <div>
-                    <h2 class="section-title">ICGC YOUTH CONFERENCE 2022</h2>
-                    <p class="text-left event-date text-small">October 28-30, 2022</p>
-                </div>
-
-                <div class="badge-foot-image">
-                    <img src="assets/images/logos/logo_youth_conference.png" alt="ISNA" class="badge-logo-image badge-logo-image-js">
-                    <span class="image-foot">CAN YOU MAKE ONE?</span>
-                </div>
+            <div class="badge-foot-image">
+                <img src="../assets/images/logos/logo_youth_conference.png" alt="ICGC" class="badge-logo-image badge-logo-image-js">
+                <span class="image-foot">CAN YOU MAKE ONE?</span>
             </div>
         </div>
     </div>
 </div>
 
+<div class="badge-wrapper v6">
+    <div class="badge-body bg-image" style="background-image: url(../assets/images/bg.png)">
+        <!-- BADGE LOGO -->
+        <div class="badge-logo badge-logo-js">
+            <img src="../assets/images/logos/logo_icgc_transparent_.png" alt="ICGC" class="badge-logo-image badge-logo-image-js">
+        </div>
+
+        <div class="badge-content">
+
+            <!-- BADGE TITLE -->
+            <h2 class="badge-title badge-title-js text-resize-js">
+                <span class="badge-title-text badge-title-text-js text-resize-text-js">Abunaser Faisal</span>
+            </h2>
+
+            <!-- BADGE ID -->
+            <div class="badge-info">
+                <p class="badge-id badge-id-js text-resize-js">
+                    <span class="text-resize-text-js"> ID: 1554485254526 </span>
+                </p>
+            </div>
+        </div>
+
+        <!-- BADGE FOOTER -->
+        <div class="badge-foot d-flex justify-space-between align-end">
+            <div>
+                <h2 class="section-title">ICGC YOUTH CONFERENCE 2022</h2>
+                <p class="text-left event-date text-small">October 28-30, 2022</p>
+            </div>
+
+            <div class="badge-foot-image">
+                <img src="../assets/images/logos/logo_youth_conference.png" alt="ICGC" class="badge-logo-image badge-logo-image-js">
+                <span class="image-foot">CAN YOU MAKE ONE?</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="badge-wrapper v6">
+    <div class="badge-body bg-image" style="background-image: url(../assets/images/bg.png)">
+        <!-- BADGE LOGO -->
+        <div class="badge-logo badge-logo-js">
+            <img src="../assets/images/logos/logo_icgc_transparent_.png" alt="ICGC" class="badge-logo-image badge-logo-image-js">
+        </div>
+
+        <div class="badge-content">
+
+            <!-- BADGE TITLE -->
+            <h2 class="badge-title badge-title-js text-resize-js">
+                <span class="badge-title-text badge-title-text-js text-resize-text-js">Abunaser Faisal</span>
+            </h2>
+
+            <!-- BADGE ID -->
+            <div class="badge-info">
+                <p class="badge-id badge-id-js text-resize-js">
+                    <span class="text-resize-text-js"> ID: 1554485254526 </span>
+                </p>
+            </div>
+        </div>
+
+        <!-- BADGE FOOTER -->
+        <div class="badge-foot d-flex justify-space-between align-end">
+            <div>
+                <h2 class="section-title">ICGC YOUTH CONFERENCE 2022</h2>
+                <p class="text-left event-date text-small">October 28-30, 2022</p>
+            </div>
+
+            <div class="badge-foot-image">
+                <img src="../assets/images/logos/logo_youth_conference.png" alt="ICGC" class="badge-logo-image badge-logo-image-js">
+                <span class="image-foot">CAN YOU MAKE ONE?</span>
+            </div>
+        </div>
+    </div>
+</div>
 
 
 <script src="https://code.jquery.com/jquery-3.6.1.slim.min.js" integrity="sha256-w8CvhFs7iHNVUtnSP0YKEg00p9Ih13rlL9zGqvLdePA=" crossorigin="anonymous"></script>
@@ -268,7 +361,7 @@
     });
 
     //== 3in(76mm); 296/4 = 74
-    let height = 75,
+    let height = 76,
         heightLogoDiv = $('.badge-logo').height()*0.264583333,
         heightFootDiv = $('.badge-foot').height()*0.264583333,
         heightContentDiv = height - (heightLogoDiv + heightFootDiv),
