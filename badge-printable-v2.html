@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Badges</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            /*background-color: #f2f2f2;*/
+        }
+
+        .badge-container {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            box-sizing: border-box;
+            margin: 0 auto;
+        }
+
+        .badge {
+            background-color: #ffffff;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            width: 10.5cm;
+            height: 5.5cm;
+            display: flex;
+            flex-direction: column;
+            /*align-items: center;*/
+            margin: 2mm;
+            margin-bottom: 6mm;
+        }
+
+        .badge-top {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 10px;
+        }
+
+        .company-logo {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            object-fit: contain;
+        }
+
+        .company-name {
+            margin: 0 0 0 10px;
+        }
+
+        .badge-content {
+            display: flex;
+            flex-direction: row;
+            padding: 10px;
+            border-top:1px solid #ddd;
+        }
+
+        .contact-info {
+            width: 70%;
+        }
+
+        .profile-name{
+            display: flex;
+            align-items: center;
+        }
+        .profile-image {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            object-fit: contain;
+            margin-right: 10px;
+        }
+
+        .qr-code {
+            flex: 1;
+            text-align: right;
+            padding-top: 30px;
+        }
+        .qr-code img{
+            max-width: 100px;
+        }
+
+        .badge-wrapper-row {
+            box-sizing: border-box;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            padding: 15px;
+        }
+
+        .badge-wrapper-row .badge-wrapper {
+            /*margin-bottom:2mm;*/
+            /*flex:0 0 50%;*/
+            /*max-width:50%;*/
+            flex: 0 0 50%;
+            max-width: 50%;
+        }
+        .text-center{
+            text-align: center;
+        }
+        .m-0{
+            margin:0;
+        }
+        .badge-wrapper.type-2 .badge-content{
+            flex-direction: column;
+        }
+        .badge-wrapper.type-2 .contact-info{
+            width: 100%;
+        }
+        .badge-wrapper.type-2 .profile-name{
+            justify-content: center;
+            align-items: center;
+        }
+        .badge-wrapper.type-2 .qr-code{
+            flex: none;
+            padding: 0;
+            text-align: center;
+        }
+        .badge-wrapper.type-2 .qr-code img{
+            max-width: 100%;
+            max-height: 90px;
+        }
+        .badge-wrapper-row.badge-wrapper-single{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .badge-wrapper-row.badge-wrapper-single .badge-wrapper{
+            flex: 0 0 100%;
+            max-width: 100%;
+        }
+        .badge-wrapper-row.badge-wrapper-single .badge{
+            margin-left:auto;
+            margin-right: auto;
+        }
+
+        @media (orientation: landscape) {
+            .badge-container {
+                justify-content: flex-start;
+            }
+
+            .badge {
+                /* margin-bottom: 5mm; */
+            }
+        }
+
+        /*==================
+            PRINT RULES
+            ==================*/
+        @page {
+            size: auto;
+            padding-top: 0;
+            margin: 25.1mm 6.35mm 25.1mm 6.35mm;
+        }
+
+        @media print {
+            .badge-wrapper {
+                page-break-after: always;
+            }
+
+            .badge-wrapper-page .badge-wrapper {
+                page-break-after: auto;
+            }
+
+            .badge-wrapper-page {
+                page-break-after: always;
+            }
+
+            .page-break {
+                page-break-after: always;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- TEMPLATE FOR SINGLE PAGE: CONSISTING 4 BADGES; ORIENTATION: LANDSCAPE -->
+<div class="badge-wrapper-row badge-wrapper-page">
+    <div class="badge-wrapper type-2">
+        <div class="badge">
+            <div class="badge-top">
+                <img src="assets/images/logos/al-ilm-full-logo.png" alt="Company Logo" class="company-logo">
+                <h3 class="company-name">Al-Ilm Sunday School</h3>
+            </div>
+            <div class="badge-content">
+                <div class="contact-info">
+                    <div class="profile-name">
+                        <img src="assets/images/profile.png" alt="Profile Image" class="profile-image">
+                        <h3 class="m-0">Jaasim Siddique</h3>
+                    </div>
+                </div>
+                <div class="qr-code">
+                    <img src="assets/images/qr-code.png" alt="QR Code">
+                </div>
+                <div class="text-center">
+                    <p class="m-0" style="font-size: .8rem;margin-top:6px;">Call Us: (317) 672-0488</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="badge-wrapper type-2">
+        <div class="badge">
+            <div class="badge-top">
+                <img src="assets/images/logos/al-ilm-full-logo.png" alt="Company Logo" class="company-logo">
+                <h3 class="company-name">Al-Ilm Sunday School</h3>
+            </div>
+            <div class="badge-content">
+                <div class="contact-info">
+                    <div class="profile-name">
+                        <img src="assets/images/profile.png" alt="Profile Image" class="profile-image">
+                        <h3 class="m-0">Jaasim Siddique</h3>
+                    </div>
+                </div>
+                <div class="qr-code">
+                    <img src="assets/images/qr-code.png" alt="QR Code">
+                </div>
+                <div class="text-center">
+                    <p class="m-0" style="font-size: .8rem;margin-top:6px;">Call Us: (317) 672-0488</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="badge-wrapper type-2">
+        <div class="badge">
+            <div class="badge-top">
+                <img src="assets/images/logos/al-ilm-full-logo.png" alt="Company Logo" class="company-logo">
+                <h3 class="company-name">Al-Ilm Sunday School</h3>
+            </div>
+            <div class="badge-content">
+                <div class="contact-info">
+                    <div class="profile-name">
+                        <img src="assets/images/profile.png" alt="Profile Image" class="profile-image">
+                        <h3 class="m-0">Jaasim Siddique</h3>
+                    </div>
+                </div>
+                <div class="qr-code">
+                    <img src="assets/images/qr-code.png" alt="QR Code">
+                </div>
+                <div class="text-center">
+                    <p class="m-0" style="font-size: .8rem;margin-top:6px;">Call Us: (317) 672-0488</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="badge-wrapper type-2">
+        <div class="badge">
+            <div class="badge-top">
+                <img src="assets/images/logos/al-ilm-full-logo.png" alt="Company Logo" class="company-logo">
+                <h3 class="company-name">Al-Ilm Sunday School</h3>
+            </div>
+            <div class="badge-content">
+                <div class="contact-info">
+                    <div class="profile-name">
+                        <img src="assets/images/profile.png" alt="Profile Image" class="profile-image">
+                        <h3 class="m-0">Jaasim Siddique</h3>
+                    </div>
+                </div>
+                <div class="qr-code">
+                    <img src="assets/images/qr-code.png" alt="QR Code">
+                </div>
+                <div class="text-center">
+                    <p class="m-0" style="font-size: .8rem;margin-top:6px;">Call Us: (317) 672-0488</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- TEMPLATE FOR SINGLE PAGE: CONSISTING 4 BADGES; ORIENTATION: LANDSCAPE -->
+<div class="badge-wrapper-row badge-wrapper-page">
+    <div class="badge-wrapper type-2">
+        <div class="badge">
+            <div class="badge-top">
+                <img src="assets/images/logos/al-ilm-full-logo.png" alt="Company Logo" class="company-logo">
+                <h3 class="company-name">Al-Ilm Sunday School</h3>
+            </div>
+            <div class="badge-content">
+                <div class="contact-info">
+                    <div class="profile-name">
+                        <img src="assets/images/profile.png" alt="Profile Image" class="profile-image">
+                        <h3 class="m-0">Jaasim Siddique</h3>
+                    </div>
+                </div>
+                <div class="qr-code">
+                    <img src="assets/images/qr-code.png" alt="QR Code">
+                </div>
+                <div class="text-center">
+                    <p class="m-0" style="font-size: .8rem;margin-top:6px;">Call Us: (317) 672-0488</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="badge-wrapper type-2">
+        <div class="badge">
+            <div class="badge-top">
+                <img src="assets/images/logos/al-ilm-full-logo.png" alt="Company Logo" class="company-logo">
+                <h3 class="company-name">Al-Ilm Sunday School</h3>
+            </div>
+            <div class="badge-content">
+                <div class="contact-info">
+                    <div class="profile-name">
+                        <img src="assets/images/profile.png" alt="Profile Image" class="profile-image">
+                        <h3 class="m-0">Jaasim Siddique</h3>
+                    </div>
+                </div>
+                <div class="qr-code">
+                    <img src="assets/images/qr-code.png" alt="QR Code">
+                </div>
+                <div class="text-center">
+                    <p class="m-0" style="font-size: .8rem;margin-top:6px;">Call Us: (317) 672-0488</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="badge-wrapper type-2">
+        <div class="badge">
+            <div class="badge-top">
+                <img src="assets/images/logos/al-ilm-full-logo.png" alt="Company Logo" class="company-logo">
+                <h3 class="company-name">Al-Ilm Sunday School</h3>
+            </div>
+            <div class="badge-content">
+                <div class="contact-info">
+                    <div class="profile-name">
+                        <img src="assets/images/profile.png" alt="Profile Image" class="profile-image">
+                        <h3 class="m-0">Jaasim Siddique</h3>
+                    </div>
+                </div>
+                <div class="qr-code">
+                    <img src="assets/images/qr-code.png" alt="QR Code">
+                </div>
+                <div class="text-center">
+                    <p class="m-0" style="font-size: .8rem;margin-top:6px;">Call Us: (317) 672-0488</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="badge-wrapper type-2">
+        <div class="badge">
+            <div class="badge-top">
+                <img src="assets/images/logos/al-ilm-full-logo.png" alt="Company Logo" class="company-logo">
+                <h3 class="company-name">Al-Ilm Sunday School</h3>
+            </div>
+            <div class="badge-content">
+                <div class="contact-info">
+                    <div class="profile-name">
+                        <img src="assets/images/profile.png" alt="Profile Image" class="profile-image">
+                        <h3 class="m-0">Jaasim Siddique</h3>
+                    </div>
+                </div>
+                <div class="qr-code">
+                    <img src="assets/images/qr-code.png" alt="QR Code">
+                </div>
+                <div class="text-center">
+                    <p class="m-0" style="font-size: .8rem;margin-top:6px;">Call Us: (317) 672-0488</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+
+</html>
