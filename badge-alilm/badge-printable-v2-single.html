@@ -27,8 +27,11 @@
             border-radius: 8px;
             padding: 20px;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            width: 10.5cm;
-            height: 5.5cm;
+            /*width: 10.5cm;*/
+            /*height: 5.5cm;*/
+            /*height: 7.5cm;*/
+            width:101.5mm;
+            height:76.2mm;
             display: flex;
             flex-direction: column;
             /*align-items: center;*/
@@ -41,6 +44,8 @@
             align-items: center;
             justify-content: center;
             margin-bottom: 10px;
+            padding-bottom: 15px;
+            border-bottom:1px solid #ddd;
         }
 
         .company-logo {
@@ -58,7 +63,7 @@
             display: flex;
             flex-direction: row;
             padding: 10px;
-            border-top:1px solid #ddd;
+            height:54%;
         }
 
         .contact-info {
@@ -68,6 +73,9 @@
         .profile-name{
             display: flex;
             align-items: center;
+        }
+        .profile-name{
+
         }
         .profile-image {
             width: 40px;
@@ -91,7 +99,7 @@
             display: flex;
             justify-content: space-between;
             flex-wrap: wrap;
-            padding: 15px;
+            padding: 0px;
         }
 
         .badge-wrapper-row .badge-wrapper {
@@ -126,6 +134,30 @@
             max-width: 100%;
             max-height: 90px;
         }
+
+        .badge-wrapper.type-3 .badge-content{
+
+        }
+        .badge-wrapper.type-3{
+
+        }
+        .badge-wrapper.type-3 .profile-name{
+            display: block;
+        }
+        .badge-wrapper.type-3 .profile-name h3{
+            font-size: 2.4rem;
+        }
+        .badge-wrapper.type-3 .profile-name h4{
+            font-size: 1.3rem;
+            margin-top: 8px;
+        }
+        .badge-wrapper.type-3 .qr-code{
+            padding: 0;
+        }
+        .badge-wrapper.type-3 .badge{
+            justify-content: space-between;
+        }
+
         .badge-wrapper-row.badge-wrapper-single{
             display: flex;
             justify-content: center;
@@ -157,11 +189,14 @@
         @page {
             size: auto;
             padding-top: 0;
-            margin: 25.1mm 6.35mm 25.1mm 6.35mm;
+            margin: 4mm 5mm 4mm 5mm;
         }
 
         @media print {
             .badge-wrapper {
+                /*page-break-after: always;*/
+            }
+            .badge-wrapper-row .badge-wrapper:nth-child(4n){
                 page-break-after: always;
             }
 
@@ -184,7 +219,7 @@
 
 <!-- TEMPLATE FOR SINGLE PAGE: CONSISTING 4 BADGES; ORIENTATION: LANDSCAPE -->
 <div class="badge-wrapper-row badge-wrapper-page badge-wrapper-single">
-    <div class="badge-wrapper type-2">
+    <div class="badge-wrapper type-3">
         <div class="badge">
             <div class="badge-top">
                 <img src="assets/images/logos/al-ilm-full-logo.png" alt="Company Logo" class="company-logo">
@@ -193,16 +228,20 @@
             <div class="badge-content">
                 <div class="contact-info">
                     <div class="profile-name">
-                        <img src="assets/images/profile.png" alt="Profile Image" class="profile-image">
-                        <h3 class="m-0">Jaasim Siddique</h3>
+                        <h3 class="m-0">Jaasim</h3>
+                        <h4 class="m-0" style="">Jaasim Siddique</h4>
                     </div>
                 </div>
                 <div class="qr-code">
                     <img src="assets/images/qr-code.png" alt="QR Code">
                 </div>
-                <div class="text-center">
-                    <p class="m-0" style="font-size: .8rem;margin-top:6px;">Call Us: (317) 672-0488</p>
-                </div>
+            </div>
+
+            <div class="badge-foot text-center">
+                <p class="m-0" style="margin-top:6px;line-height: 1;display: flex; justify-content: center;align-items: center">
+                    <img src="assets/images/call_24.png" alt="phone" style="width: 18px;margin-right: 10px;position: relative;top: -1px;">
+                    <span>(317) 672-0488</span>
+                </p>
             </div>
         </div>
     </div>
